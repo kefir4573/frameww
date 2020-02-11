@@ -1,0 +1,52 @@
+<div class="outer">
+    <div class="middle">
+        <div class="inner">
+
+
+            <center>
+                <h2>{{ title }}</h2>
+
+                <table>
+
+                    {% if goods[0] is null %}
+                        <tr>
+                            <td colspan="3">Корзина пустая</td>
+                        </tr>{% endif %}
+                    {% if goods[0] is not null %}
+                        <tr>
+
+                            <th>Название</th>
+                            <th>Цена</th>
+                            <th>Категория</th>
+
+                        </tr>
+                    {% endif %}
+
+                    {% for product in goods %}
+                        <tr>
+
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.price }} Руб.</td>
+                            <td>{{ product.cat_name }}</td>
+
+
+                        </tr>
+                    {% endfor %}
+                    <tr><td colspan="2">Общая стоимость:</td><td><strong>{{ totalSum }} Руб.</strong></td></tr>
+                    <tr>
+                        <td colspan="3"><a href="?c=catalog" style="color:white;">Перейти в каталог</a></td>
+                    </tr>
+                </table>
+                {% if goods[0] is not null %}
+                    <form method="post">
+                        <button type="submit" name="cleanBasket">Очистить корзину</button>
+                    </form>
+                {% endif %}
+
+            </center>
+
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>{{ title }}</title>
+    <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+    <link rel="preconnect" href="//fonts.gstatic.com"/>
+    <link rel="preload"
+          href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Play:400,700&amp;subset=cyrillic" as="fetch"
+          crossorigin="anonymous"/>
+
+    <link rel="stylesheet" type="text/css" href="v/templates/style2.css">
+
+</head>
+<script src='v/js/jquery-3.3.1.min.js'></script>
+<body>
+
+<header class="main-header">
+    <div class="main-header__inner">
+        <a href="/" class="main-header__logo">
+            <img src="https://steampay.com/img/logo.svg" width="195" height="42" alt="Магазин игр Steampay">
+            <img src="https://steampay.com/img/logo-min.svg" width="53" height="28" alt="Магазин игр Steampay">
+        </a>
+
+        <nav>
+            <ul class="main-header__list">
+
+                <li class="main-header__item main-header__item--hide-sm">
+                    <a href="?c=catalog" class="main-header__btn main-header__btn--link">
+                        Каталог игр
+                    </a>
+                </li>
+                <li class="main-header__item main-header__item--hide-sm">
+                    <a href="#" class="main-header__btn main-header__btn--link">
+                        Контакты
+                    </a>
+                </li>
+                <li class="main-header__item main-header__item--hide-sm">
+                    <a href="?c=users" class="main-header__btn main-header__btn--link">
+                        Личный кабинет
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="main-header__right">
+            <div class="main-header__currency dropdown--show-backdrop">
+
+                <button type="button" data-toggle="dropdown" class="main-header__btn main-header__btn--right-btn">
+<span class="main-header__currency-selected" data-currency="wmr">
+    <a href="?act=basket&c=catalog" style="color:black;"><div id="busket"><div>Корзина: {{ countGoods }}</div>
+    {{ sumGoods }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 440" height="24">
+       <path
+                d="M232.5 242.4c63.9 0 115.9-54.4 115.9-121.2C348.4 54.4 296.4 0 232.5 0H120.6v282.4h-29v30h29V440h30V312.4h102v-30H150.6v-40H232.5zM150.6 30h82c47.4 0 85.9 40.9 85.9 91.2 0 50.3-38.5 91.2-85.9 91.2h-82V30z"/></svg>
+   </div> </a> </span>
+                </button>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</header>
+
+{{ content |raw }}
+
+<footer class="main-footer">
+    <div class="container-fluid">
+
+
+        <div class="main-footer__footer">
+            <div class="main-footer__footer-left">
+                &copy; 2012–2020 STEAMPAY
+                <div class="main-footer__copyright">
+                    <noindex>Все права защищены. Полное или частичное копирование материалов сайта без согласования с
+                        администрацией запрещено! <br> Все названия игр, компаний, торговых марок, логотипы и игровые
+                        материалы являются собственностью соответствующих владельцев.
+                    </noindex>
+                </div>
+            </div>
+            <div class="main-footer__footer-right">
+
+                <div class="main-footer__nav">
+                    <nav>
+                        <ul class="main-footer__nav-list">
+                            <li class="main-footer__nav-item">
+                                <a class="main-footer__nav-link" href="/agreement">Соглашение</a>
+                            </li>
+                            <li class="main-footer__nav-item">
+                                <a class="main-footer__nav-link" href="/partner">Партнерам</a>
+                            </li>
+                            <li class="main-footer__nav-item">
+                                <a class="main-footer__nav-link" href="/support">Поддержка</a>
+                            </li>
+                            <li class="main-footer__nav-item">
+                                <a class="main-footer__nav-link" href="/about">О сайте</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+<script src='v/js/AjaxBusket.js'></script>
+</html>

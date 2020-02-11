@@ -1,0 +1,121 @@
+<main class="product main-content">
+    <div class="product__bg"></div>
+    <div class="product__main container-fluid">
+        <div class="breadcrumbs">
+
+        </div>
+        <h1 class="product__title" itemprop="name">
+            {{ title }}
+        </h1>
+        <div class="product__content">
+            <div class="product__left">
+                <div class="product__image-block">
+
+                    <div class="product__image">
+                        <img src="{{ good.img }}" width="375" height="400">
+                    </div>
+
+                </div>
+                <div class="product__extra-info product__extra-info--mobile">
+                    <div class="product__advantages">
+                        <ul class="product__advantages-list">
+
+                            <li class="product__advantages-item product__advantages-item--delivery">
+                                Моментальная <span class="product__advantages-orange">доставка</span> на e-mail
+                            </li>
+                            <li class="product__advantages-item product__advantages-item--license">
+                                Лицензионный <span class="product__advantages-orange">ключ</span> активации в EpicGames
+                            </li>
+                            <li class="product__advantages-item product__advantages-item--discount">
+                                Накопительная скидка до 10%
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product__info product__block">
+                    <ul class="product__info-list">
+
+                        <li class="product__info-item">
+                            <div class="product__info-key">Категория:
+                            </div>
+                            <div class="product__info-value">
+                                <ul class="product__info-inner-block-list">
+                                    {{ good.cat_name }}
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product__right">
+                <div class="product__header">
+                    <div class="product__extra-info">
+                        <div class="product__advantages">
+                            <ul class="product__advantages-list">
+
+                                <li class="product__advantages-item product__advantages-item--delivery">
+                                    Моментальная доставка на e-mail
+                                </li>
+                                <li class="product__advantages-item product__advantages-item--license">
+                                    Лицензионный <span class="product__advantages-orange">ключ</span> активации в
+                                    EpicGames
+                                </li>
+                                <li class="product__advantages-item product__advantages-item--discount">
+                                    Накопительная скидка до 10%
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product__cart-block">
+                        <div class="product__price-block" itemprop="offers" itemscope=""
+                             itemtype="http://schema.org/Offer">
+
+
+                            <div class="product__price">
+
+                                <div class="product__current-price">
+                                    {{ good.price }} <sup class="product__price-curr">руб.</sup>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product__md-block">
+                            <div class="product__buy-block">
+                                <div class="product__buy">
+                                    <button class="product__buy-button" onclick='AddToBusket({{good.id}});'><div id="butsel"><span>купить</span></div> </button>
+                                </div>
+
+                            </div>
+                            <div class="product__cart-block-links">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product__info product__info--mobile product__block">
+                    <ul class="product__info-list">
+
+                        <li class="product__info-item">
+                            <div class="product__info-key">
+                                Категория:
+                            </div>
+                            <div class="product__info-value">
+                                <ul class="product__info-inner-block-list">
+                                    {{ good.cat_name }}
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="product__description product__block">
+
+                    <div class="product__description-content" itemprop="description">
+                        {{ text |raw }}</div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</main>

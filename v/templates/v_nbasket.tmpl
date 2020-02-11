@@ -1,0 +1,94 @@
+<main class="main-content">
+    <div class="page-header">
+        <h1>{{ title }}</h1>
+    </div>
+    <section class="order-form container-fluid">
+
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="catalog catalog--order catalog--border-wide">
+                        {% if goods[0] is null %}
+
+                            <h2>Корзина пустая</h2>
+                        {% endif %}
+                        {% for product in goods %}
+
+                            <a href="?act=good&c=catalog&id={{ product.id }}" class="catalog-item">
+                                <div class="catalog-item__img">
+                                    <img src="{{ product.img }}">
+                                </div>
+                                <div class="catalog-item__name">
+                                    {{ product.name }}
+                                    <div class="catalog-item__info">
+                                        <div class="catalog-item__genres">
+                                            {{ product.cat_name }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="catalog-item__price">
+                                    {{ product.price }} ₽
+                                </div>
+                            </a>
+                        {% endfor %}
+                    <br>
+                        {% if goods[0] is not null %}
+                            <form method="post">
+                                <button type="submit" class="btn" name="cleanBasket" style="width: 100%;"><span>Очистить корзину</span></button>
+                            </form>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+            <div class="row order-form__column">
+
+
+                {% if goods[0] is not null %}
+                    <div class="col-xs-12 order-form__confirm-wrapper">
+                        <h2>2 Подтвердите заказ</h2>
+                        <div class="order-form__confirm" style="min-height:1px;">
+
+                            <div class="order-form__confirm-inner">
+                                <div class="order-form__summary">
+                                    <div class="order-form__summary-left">
+                                        Итоговая цена:
+
+                                    </div>
+                                    <div class="order-form__summary-right">
+                                        <span class="cart-price" data-total="532">{{ totalSum }}</span> <span
+                                                class="cart-currency">₽</span>
+                                    </div>
+                                </div>
+                                <form action="?act=order&c=catalog" method="post" class="has-validation-callback">
+                                <div class="order-form__inputs">
+                                    <div class="form-group order-form__inputs-left">
+                                        <input type="text" name="nameOrder" class="form-control order-form__email"
+                                               placeholder="Введите ваше имя">
+                                    </div>
+                                    <div class="order-form__inputs-right" style="padding-left: 0px;">
+
+
+                                        <input type="text" name="phoneOrder" class="form-control order-form__email"
+                                               placeholder="Введите номер телефона, +7...">
+                                    </div>
+                                    <div class="order-form__inputs-right">
+
+
+                                        <button type="submit" class="btn" name="orderGood">
+                                            <span>Подтвердить заказ</span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div>
+        </form>
+    </section>
+</main>
